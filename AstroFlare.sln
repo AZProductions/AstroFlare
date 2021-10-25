@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Compiler", "AstroFlare.Compiler\AstroFlare.Compiler.csproj", "{43F7084D-1540-47F5-98DE-BC95B30AFE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.Compiler", "AstroFlare.Compiler\AstroFlare.Compiler.csproj", "{43F7084D-1540-47F5-98DE-BC95B30AFE18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Generator", "AstroFlare.Generator\AstroFlare.Generator.csproj", "{8A1B10E6-4341-4C55-B09D-60B6465CCEEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.ConsoleSDK", "AstroFlare.ConsoleSDK\AstroFlare.ConsoleSDK.csproj", "{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.UISDK", "AstroFlare.UISDK\AstroFlare.UISDK.csproj", "{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{43F7084D-1540-47F5-98DE-BC95B30AFE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43F7084D-1540-47F5-98DE-BC95B30AFE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43F7084D-1540-47F5-98DE-BC95B30AFE18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A1B10E6-4341-4C55-B09D-60B6465CCEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A1B10E6-4341-4C55-B09D-60B6465CCEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A1B10E6-4341-4C55-B09D-60B6465CCEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A1B10E6-4341-4C55-B09D-60B6465CCEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

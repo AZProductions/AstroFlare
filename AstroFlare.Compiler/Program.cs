@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace AstroFlare.Compiler
 {
     class Program

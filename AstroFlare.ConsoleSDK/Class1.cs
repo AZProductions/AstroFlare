@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AstroFlare.Generator
+namespace AstroFlare.ConsoleSDK
 {
     public class Class1
     {
