@@ -17,7 +17,7 @@ AstroFlare
 <br/> <!--WhiteSpace-->
 
 # 1. **Intuitive Syntax.**
-<img align="right" width="400" height="300" src="https://via.placeholder.com/400/">
+<img align="right" width="400" height="300" src=".design\artwork\header3.1.png">
 
 AstroFlare combines the best features from the popular languages like C#, JavaScript and Rust into one package. The syntax uses a *Smart Bracketing System* and more. Compile programs even faster using it's state of the art Packaging System. [Learn more about **AstroFlare.**]()
 
