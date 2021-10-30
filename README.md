@@ -1,7 +1,6 @@
 <h1 align="center">
 <img src="https://via.placeholder.com/500" width="256"/><br />
 AstroFlare
-----
 </h1>
 <h4 align="center" style="font-weight: bold; font-style: italic;"> Powerfull Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler. </h4>
 
