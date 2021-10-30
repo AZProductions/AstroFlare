@@ -30,9 +30,9 @@ AstroFlare uses a direct compiling engine which improves compile speeds by a lot
 
 
 # 3. **In-house Rendering Engine.**
-<img align="left" width="500" height="200" src="https://via.placeholder.com/400/">
+<img align="left" width="500" height="200" src=".design\artwork\header1.png">
 
-AstroFlare uses native and *In-House* rendering solutions, to display your software with the highest quality possible. As we provide a wider range of product support, we're also planning on releasing different **UI (UserInterface) Kits**, which are following the standards layed out by UI/UX designers. [Learn more about **AstroFlare Rendering and UI Kits.**]()
+AstroFlare uses native and *In-House* rendering solutions, to display your software with the highest quality possible. As we provide a wider range of product support, we're also planning on releasing different **UI (UserInterface) Kits**, which are following the standards layed out by UI/UX designers. [Learn more about **AstroFlare UI Kits.**]()
 
 <br/>
 <br/>
@@ -42,6 +42,9 @@ AstroFlare uses native and *In-House* rendering solutions, to display your softw
 AstroFlare by itself is compiled in Jit, which decreases the time it spends loading in memory. This is a major game-changer. We're also introducing another inbuilt project called **LightSpeed™**. LightSpeed is a new compiling engine used in AstroFlare and the AstroFlare Compiler. [Learn more how to **incorporate LightSpeed™ into your own products**.]()
 
 <br/>
+
+<img src=".design\artwork\header2.png" class="center">
+
 
 ___
 
