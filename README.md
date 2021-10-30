@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://via.placeholder.com/500" width="256"/><br />
+<img src="./.design/renders/path2x.png" height="200"/><br />
 AstroFlare
 </h1>
 <h4 align="center" style="font-weight: bold; font-style: italic;"> Powerfull Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler. </h4>
@@ -49,6 +49,7 @@ ___
 
 This repository is under a [proprietary licence](https://raw.githubusercontent.com/AZProductions/Kookaburra/main/LICENCE).
 
+The icons are provided by [Icons8](https://icons8.com).
 ## Project Goals
 
 <br/>
