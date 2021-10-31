@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    abstract class SyntaxNode
+    public abstract class SyntaxNode
     {
         public abstract SyntaxKind Kind { get; }
 

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    class Lexer
+    internal sealed class Lexer
     {
         private readonly string _text;
         private int _position;

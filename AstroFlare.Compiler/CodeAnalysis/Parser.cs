@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    class Parser
+    internal sealed class Parser
     {
         private readonly SyntaxToken[] _tokens;
 

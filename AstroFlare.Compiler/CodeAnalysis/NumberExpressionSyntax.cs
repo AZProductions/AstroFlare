@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    sealed class NumberExpressionSyntax : ExpressionSyntax
+    public sealed class NumberExpressionSyntax : ExpressionSyntax
     {
         public NumberExpressionSyntax(SyntaxToken numberToken)
         {

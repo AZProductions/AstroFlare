@@ -1,8 +1,9 @@
 ﻿using System;
+using AstroFlare.Compiler;
 
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    class Evaluator
+    public sealed class Evaluator
     {
         private readonly ExpressionSyntax _root;
 

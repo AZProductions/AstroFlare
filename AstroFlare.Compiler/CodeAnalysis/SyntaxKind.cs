@@ -1,6 +1,6 @@
-namespace Minsk.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis
 {
-    enum SyntaxKind
+    public enum SyntaxKind
     {
         NumberToken,
         WhitespaceToken,
