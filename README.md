@@ -2,7 +2,7 @@
 <img src="./.design/renders/path2x.png" height="200"/><br />
 AstroFlare
 </h1>
-<h4 align="center" style="font-weight: bold; font-style: italic;"> Powerfull Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler. </h4>
+<h4 align="center" style="font-weight: bold; font-style: italic;"> Powerful Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler. </h4>
 
 
 <div align="center">
@@ -30,7 +30,11 @@ AstroFlare uses a direct compiling engine which improves compile speeds by a lot
 
 
 # 3. **In-house Rendering Engine.**
-<img align="left" width="500" height="200" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header1.png">
+<img align="left" width="500" height="200" style="  width: 500px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header1.png">
 
 AstroFlare uses native and *In-House* rendering solutions, to display your software with the highest quality possible. As we provide a wider range of product support, we're also planning on releasing different **UI (UserInterface) Kits**, which are following the standards layed out by UI/UX designers. [Learn more about **AstroFlare UI Kits.**]()
 
@@ -50,7 +54,7 @@ ___
 
 ## Copyright and License
 
-This repository is under a [proprietary licence](https://raw.githubusercontent.com/AZProductions/Kookaburra/main/LICENCE).
+This repository is under a [proprietary license](https://raw.githubusercontent.com/AZProductions/Kookaburra/main/LICENCE).
 
 The icons are provided by [Icons8](https://icons8.com).
 ## Project Goals
