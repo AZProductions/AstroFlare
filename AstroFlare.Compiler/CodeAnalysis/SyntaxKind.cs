@@ -16,7 +16,8 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
         //Expressions
         LiteralExpression,
+        UnaryExpression,
         BinaryExpression,
-        ParenthesizedExpression
+        ParenthesizedExpression,
     }
 }

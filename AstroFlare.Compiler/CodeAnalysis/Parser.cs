@@ -68,7 +68,18 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
         private ExpressionSyntax ParseExpression(int parencePrecedence = 0) 
         {
-            var left = ParsePrimaryExpression();
+            ExpressionSyntax left;
+            var unaryOperatorPrecedence = Current.Kind.GetUnaryOperatorPrecedence();
+            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence > parencePrecedence)
+            {
+                var operatorToken = NextToken();
+                var operand = ParsePrimaryExpression();
+                left = new UnaryExpressionSyntax(operatorToken, operand);
+            }
+            else
+            {
+                left = ParsePrimaryExpression();
+            }
 
             while (true) 
             {
