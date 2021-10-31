@@ -15,7 +15,7 @@ namespace AstroFlare.Compiler.CodeAnalysis
         CloseParenthesisToken,
 
         //Expressions
-        NumberExpression,
+        LiteralExpression,
         BinaryExpression,
         ParenthesizedExpression
     }
