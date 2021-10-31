@@ -17,7 +17,7 @@ AstroFlare
 <br/> <!--WhiteSpace-->
 
 # 1. **Intuitive Syntax.**
-<img align="right" width="400" height="300" src=".design\artwork\header3.1.png">
+<img align="right" width="400" height="300" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header3.1.png">
 
 AstroFlare combines the best features from the popular languages like C#, JavaScript and Rust into one package. The syntax uses a *Smart Bracketing System* and more. Compile programs even faster using it's state of the art Packaging System. [Learn more about **AstroFlare.**]()
 
@@ -30,7 +30,7 @@ AstroFlare uses a direct compiling engine which improves compile speeds by a lot
 
 
 # 3. **In-house Rendering Engine.**
-<img align="left" width="500" height="200" src=".design\artwork\header1.png">
+<img align="left" width="500" height="200" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header1.png">
 
 AstroFlare uses native and *In-House* rendering solutions, to display your software with the highest quality possible. As we provide a wider range of product support, we're also planning on releasing different **UI (UserInterface) Kits**, which are following the standards layed out by UI/UX designers. [Learn more about **AstroFlare UI Kits.**]()
 
@@ -43,7 +43,7 @@ AstroFlare by itself is compiled in Jit, which decreases the time it spends load
 
 <br/>
 
-<img src=".design\artwork\header2.png" class="center">
+<img src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header2.png" class="center">
 
 
 ___

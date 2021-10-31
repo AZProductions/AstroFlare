@@ -334,4 +334,4 @@ ASALocalRun/
 .localhistory/
 
 # Local Data
-index.txt
+.local/

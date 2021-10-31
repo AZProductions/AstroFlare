@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AstroFlare.ConsoleSDK\AstroFlare.ConsoleSDK.csproj" />
-    <ProjectReference Include="..\AstroFlare.Generator\AstroFlare.Generator.csproj" />
     <ProjectReference Include="..\AstroFlare.UISDK\AstroFlare.UISDK.csproj" />
   </ItemGroup>
 
