@@ -66,11 +66,11 @@ namespace AstroFlare.Compiler.CodeAnalysis
             return new SyntaxTree(_diagnostics, expresion, endOfFileToken);
         }
 
-        private ExpressionSyntax ParseExpression(int parencePrecedence = 0) 
+        private ExpressionSyntax ParseExpression(int parentPrecedence = 0) 
         {
             ExpressionSyntax left;
             var unaryOperatorPrecedence = Current.Kind.GetUnaryOperatorPrecedence();
-            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence > parencePrecedence)
+            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence > parentPrecedence)
             {
                 var operatorToken = NextToken();
                 var operand = ParsePrimaryExpression();
@@ -83,12 +83,12 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
             while (true) 
             {
-                var precendence = Current.Kind.GetBinaryOperatorPrecedence();
-                if (precendence == 0 || precendence <= parencePrecedence)
+                var precedence = Current.Kind.GetBinaryOperatorPrecedence();
+                if (precedence == 0 || precedence <= parentPrecedence)
                     break;
 
                 var operatorToken = NextToken();
-                var right = ParseExpression(precendence);
+                var right = ParseExpression(precedence);
                 left = new BinaryExpressionSyntax(left, operatorToken, right);
             }
 
