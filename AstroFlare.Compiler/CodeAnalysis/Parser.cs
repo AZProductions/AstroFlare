@@ -72,7 +72,7 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
             while (true) 
             {
-                var precendence = GetBinaryOperatorPrecedence(Current.Kind);
+                var precendence = Current.Kind.GetBinaryOperatorPrecedence();
                 if (precendence == 0 || precendence <= parencePrecedence)
                     break;
 
@@ -82,23 +82,6 @@ namespace AstroFlare.Compiler.CodeAnalysis
             }
 
             return left;
-        }
-
-        private static int GetBinaryOperatorPrecedence(SyntaxKind kind)
-        {
-            switch (kind)
-            {
-                case SyntaxKind.StarToken:
-                case SyntaxKind.SlashToken:
-                    return 2;
-
-                case SyntaxKind.PlusToken:
-                case SyntaxKind.MinusToken:
-                    return 1;
-
-                default:
-                    return 0;
-            }
         }
 
         private ExpressionSyntax ParsePrimaryExpression()
