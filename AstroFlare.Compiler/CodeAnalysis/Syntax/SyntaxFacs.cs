@@ -1,4 +1,4 @@
-﻿namespace AstroFlare.Compiler.CodeAnalysis
+﻿namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     internal static class SyntaxFacs 
     {

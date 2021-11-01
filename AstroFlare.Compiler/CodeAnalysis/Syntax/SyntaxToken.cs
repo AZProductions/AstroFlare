@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AstroFlare.Compiler.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public sealed class SyntaxToken : SyntaxNode
     {

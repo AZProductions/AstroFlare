@@ -1,4 +1,4 @@
-namespace AstroFlare.Compiler.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public abstract class ExpressionSyntax : SyntaxNode
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using AstroFlare.Compiler;
+using AstroFlare.Compiler.CodeAnalysis.Syntax;
 
 namespace AstroFlare.Compiler.CodeAnalysis
 {
@@ -9,7 +10,7 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
         public Evaluator(ExpressionSyntax root)
         {
-            this._root = root;
+            _root = root;
         }
 
         public int Evaluate()

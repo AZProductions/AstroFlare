@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AstroFlare.Compiler.CodeAnalysis
+namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     internal sealed class Parser
     {
@@ -70,10 +70,10 @@ namespace AstroFlare.Compiler.CodeAnalysis
         {
             ExpressionSyntax left;
             var unaryOperatorPrecedence = Current.Kind.GetUnaryOperatorPrecedence();
-            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence > parentPrecedence)
+            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence >= parentPrecedence)
             {
                 var operatorToken = NextToken();
-                var operand = ParsePrimaryExpression();
+                var operand = ParseExpression(unaryOperatorPrecedence);
                 left = new UnaryExpressionSyntax(operatorToken, operand);
             }
             else

@@ -4,6 +4,7 @@ using System.Linq;
 using AstroFlare.UISDK;
 using AstroFlare.ConsoleSDK;
 using AstroFlare.Compiler.CodeAnalysis;
+using AstroFlare.Compiler.CodeAnalysis.Syntax;
 
 namespace Minsk
 {
