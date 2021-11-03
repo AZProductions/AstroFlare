@@ -1,3 +1,4 @@
+using AstroFlare.Compiler.CodeAnalysis.Binding;
 using System.Collections.Generic;
 using System.Linq;
 

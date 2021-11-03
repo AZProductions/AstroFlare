@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AstroFlare.Compiler.CodeAnalysis.Binding;
+using System.Collections.Generic;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {

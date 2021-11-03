@@ -1,3 +1,4 @@
+using AstroFlare.Compiler.CodeAnalysis.Binding;
 using System.Collections.Generic;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
@@ -89,7 +90,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 
                 var operatorToken = NextToken();
                 var right = ParseExpression(precedence);
-                left = new BinaryExpressionSyntax(left, operatorToken, right);
+                left = new BinaryExpressionSyntax(left, operatorToken, right); 
             }
 
             return left;
