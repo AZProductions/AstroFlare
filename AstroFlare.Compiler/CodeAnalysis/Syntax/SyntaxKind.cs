@@ -2,7 +2,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public enum SyntaxKind
     {
-        //Tokens
+        // Tokens
         BadToken,
         EndOfFileToken,
         WhitespaceToken,
@@ -13,8 +13,13 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         SlashToken,
         OpenParenthesisToken,
         CloseParenthesisToken,
+        IdentifierToken,
 
-        //Expressions
+        // Keywords
+        FalseKeyword,
+        TrueKeyword,
+
+        // Expressions
         LiteralExpression,
         UnaryExpression,
         BinaryExpression,

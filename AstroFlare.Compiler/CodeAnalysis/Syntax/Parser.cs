@@ -23,7 +23,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                 if (token.Kind != SyntaxKind.WhitespaceToken &&
                     token.Kind != SyntaxKind.BadToken)
                 {
-                    tokens.Add(token);   
+                    tokens.Add(token);
                 }
             } while (token.Kind != SyntaxKind.EndOfFileToken);
 
@@ -67,7 +67,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
             return new SyntaxTree(_diagnostics, expresion, endOfFileToken);
         }
 
-        private ExpressionSyntax ParseExpression(int parentPrecedence = 0) 
+        private ExpressionSyntax ParseExpression(int parentPrecedence = 0)
         {
             ExpressionSyntax left;
             var unaryOperatorPrecedence = Current.Kind.GetUnaryOperatorPrecedence();
@@ -82,7 +82,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                 left = ParsePrimaryExpression();
             }
 
-            while (true) 
+            while (true)
             {
                 var precedence = Current.Kind.GetBinaryOperatorPrecedence();
                 if (precedence == 0 || precedence <= parentPrecedence)
@@ -90,7 +90,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 
                 var operatorToken = NextToken();
                 var right = ParseExpression(precedence);
-                left = new BinaryExpressionSyntax(left, operatorToken, right); 
+                left = new BinaryExpressionSyntax(left, operatorToken, right);
             }
 
             return left;
@@ -98,16 +98,30 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 
         private ExpressionSyntax ParsePrimaryExpression()
         {
-            if (Current.Kind == SyntaxKind.OpenParenthesisToken)
+            switch (Current.Kind)
             {
-                var left = NextToken();
-                var expression = ParseExpression();
-                var right = MatchToken(SyntaxKind.CloseParenthesisToken);
-                return new ParenthesizedExpressionSyntax(left, expression, right);
-            }
+                case SyntaxKind.OpenParenthesisToken:
+                    {
+                        var left = NextToken();
+                        var expression = ParseExpression();
+                        var right = MatchToken(SyntaxKind.CloseParenthesisToken);
+                        return new ParenthesizedExpressionSyntax(left, expression, right);
+                    }
 
-            var numberToken = MatchToken(SyntaxKind.NumberToken);
-            return new LiteralExpressionSyntax(numberToken);
+                case SyntaxKind.FalseKeyword:
+                case SyntaxKind.TrueKeyword:
+                    {
+                        var keywordToken = NextToken();
+                        var value = Current.Kind == SyntaxKind.TrueKeyword;
+                        return new LiteralExpressionSyntax(keywordToken, value);
+                    }
+
+                default:
+                    {
+                        var numberToken = MatchToken(SyntaxKind.NumberToken);
+                        return new LiteralExpressionSyntax(numberToken);
+                    }
+            }
         }
     }
 }
