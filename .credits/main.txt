@@ -1,0 +1,1 @@
+The compiler is inspired by Building a Compiler from Immo Landwerth (minsk-compiler.net) under the MIT license.
