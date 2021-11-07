@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AstroFlare.ConsoleSDK\AstroFlare.ConsoleSDK.csproj" />
     <ProjectReference Include="..\AstroFlare.UISDK\AstroFlare.UISDK.csproj" />
+    <ProjectReference Include="..\AstroFlare\AstroFlare.csproj" />
   </ItemGroup>
 
 </Project>

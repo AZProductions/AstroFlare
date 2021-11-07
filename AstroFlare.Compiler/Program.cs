@@ -10,7 +10,7 @@ using AstroFlare.Compiler.CodeAnalysis.Binding;
 namespace Minsk
 {
     internal static class Program
-    {        
+    {
         private static void Main()
         {
             var showTree = false;
@@ -35,29 +35,25 @@ namespace Minsk
                 }
 
                 var syntaxTree = SyntaxTree.Parse(line);
-                var binder = new Binder();
-                var boundExpression = binder.BindExpression(syntaxTree.Root);
-
-                var diagnostics = syntaxTree.Diagnostics.Concat(binder.Diagnostics).ToArray();
+                var compilation = new Compilation(syntaxTree);
+                var result = compilation.Evaluate();
 
                 if (showTree)
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkGray;                
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
                     PrettyPrint(syntaxTree.Root);
                     Console.ResetColor();
                 }
 
-                if (!diagnostics.Any())
+                if (!result.Diagnostics.Any())
                 {
-                    var e = new Evaluator(boundExpression);
-                    var result = e.Evaluate();
-                    Console.WriteLine(result);
+                    Console.WriteLine(result.Value);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
 
-                    foreach (var diagnostic in diagnostics)
+                    foreach (var diagnostic in result.Diagnostics)
                         Console.WriteLine(diagnostic);
 
                     Console.ResetColor();
@@ -85,7 +81,7 @@ namespace Minsk
 
             var lastChild = node.GetChildren().LastOrDefault();
 
-            foreach (var child in node.GetChildren())            
+            foreach (var child in node.GetChildren())
                 PrettyPrint(child, indent, child == lastChild);
         }
     }
