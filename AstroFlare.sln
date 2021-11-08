@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.WebGenerator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare", "AstroFlare\AstroFlare.csproj", "{9007073E-52BE-4DE4-8D48-9D26A4E6562F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Tests", "AstroFlare.Tests\AstroFlare.Tests.csproj", "{B90DA614-DC68-4C97-961F-ED6D291E232F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9007073E-52BE-4DE4-8D48-9D26A4E6562F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9007073E-52BE-4DE4-8D48-9D26A4E6562F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9007073E-52BE-4DE4-8D48-9D26A4E6562F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
