@@ -10,10 +10,11 @@ using AstroFlare.Compiler.CodeAnalysis.Binding;
 namespace Minsk
 {
     internal static class Program
-    {        
+    {
         private static void Main()
         {
             var showTree = false;
+            var variables = new Dictionary<string, object>();
 
             while (true)
             {
@@ -36,11 +37,11 @@ namespace Minsk
 
                 var syntaxTree = SyntaxTree.Parse(line);
                 var compilation = new Compilation(syntaxTree);
-                var result = compilation.Evaluate();
+                var result = compilation.Evaluate(variables);
 
                 if (showTree)
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkGray;                
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
                     PrettyPrint(syntaxTree.Root);
                     Console.ResetColor();
                 }
@@ -95,12 +96,12 @@ namespace Minsk
             }
 
             Console.WriteLine();
-            
+
             indent += isLast ? "   " : "│  ";
 
             var lastChild = node.GetChildren().LastOrDefault();
 
-            foreach (var child in node.GetChildren())            
+            foreach (var child in node.GetChildren())
                 PrettyPrint(child, indent, child == lastChild);
         }
     }
