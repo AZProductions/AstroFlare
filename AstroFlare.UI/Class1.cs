@@ -1,8 +1,9 @@
 ﻿using System;
 
-namespace AstroFlare.UISDK
+namespace AstroFlare.UI
 {
     public class Class1
     {
+
     }
 }

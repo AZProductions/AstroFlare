@@ -1,19 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.Compiler", "AstroFlare.Compiler\AstroFlare.Compiler.csproj", "{43F7084D-1540-47F5-98DE-BC95B30AFE18}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.ConsoleSDK", "AstroFlare.ConsoleSDK\AstroFlare.ConsoleSDK.csproj", "{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.UISDK", "AstroFlare.UISDK\AstroFlare.UISDK.csproj", "{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.WebGenerator", "AstroFlare.WebGenerator\AstroFlare.WebGenerator.csproj", "{D3992191-4AD9-4AB0-9AA4-BBFAE6935D9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare", "AstroFlare\AstroFlare.csproj", "{9007073E-52BE-4DE4-8D48-9D26A4E6562F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare", "AstroFlare\AstroFlare.csproj", "{9007073E-52BE-4DE4-8D48-9D26A4E6562F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Tests", "AstroFlare.Tests\AstroFlare.Tests.csproj", "{B90DA614-DC68-4C97-961F-ED6D291E232F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.Tests", "AstroFlare.Tests\AstroFlare.Tests.csproj", "{B90DA614-DC68-4C97-961F-ED6D291E232F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.UI.Colors", "AstroFlare.UI.Colors\AstroFlare.UI.Colors.csproj", "{0C8CFBE9-7157-4137-91C6-F51D4B062232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.UI", "AstroFlare.UI\AstroFlare.UI.csproj", "{A1B683FF-39D0-43B7-AA2D-ECE64C4D84D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.UI.Colors.Generator", "AstroFlare.UI.Colors.Generator\AstroFlare.UI.Colors.Generator.csproj", "{4A5F66ED-D246-457F-A59E-C8113AD7D016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +33,6 @@ Global
 		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C82BDE-2758-4CA0-97F3-B0225E08BEEC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBE7812D-F30C-46C1-98F7-C2E0CB9113F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3992191-4AD9-4AB0-9AA4-BBFAE6935D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3992191-4AD9-4AB0-9AA4-BBFAE6935D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3992191-4AD9-4AB0-9AA4-BBFAE6935D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +45,18 @@ Global
 		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B90DA614-DC68-4C97-961F-ED6D291E232F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8CFBE9-7157-4137-91C6-F51D4B062232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8CFBE9-7157-4137-91C6-F51D4B062232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8CFBE9-7157-4137-91C6-F51D4B062232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8CFBE9-7157-4137-91C6-F51D4B062232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B683FF-39D0-43B7-AA2D-ECE64C4D84D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B683FF-39D0-43B7-AA2D-ECE64C4D84D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B683FF-39D0-43B7-AA2D-ECE64C4D84D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B683FF-39D0-43B7-AA2D-ECE64C4D84D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5F66ED-D246-457F-A59E-C8113AD7D016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5F66ED-D246-457F-A59E-C8113AD7D016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5F66ED-D246-457F-A59E-C8113AD7D016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5F66ED-D246-457F-A59E-C8113AD7D016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
