@@ -1,4 +1,6 @@
-﻿namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+﻿using System.Collections.Generic;
+
+namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public static class SyntaxFacts
     {
@@ -53,6 +55,26 @@
                     return SyntaxKind.FalseKeyword;
                 default:
                     return SyntaxKind.IdentifierToken;
+            }
+        }
+
+        public static IEnumerable<SyntaxKind> GetUnaryOperatorKinds()
+        {
+            var kinds = (SyntaxKind[])Enum.GetValues(typeof(SyntaxKind));
+            foreach (var kind in kinds)
+            {
+                if (GetUnaryOperatorPrecedence(kind) > 0)
+                    yield return kind;
+            }
+        }
+
+        public static IEnumerable<SyntaxKind> GetBinaryOperatorKinds()
+        {
+            var kinds = (SyntaxKind[])Enum.GetValues(typeof(SyntaxKind));
+            foreach (var kind in kinds)
+            {
+                if (GetBinaryOperatorPrecedence(kind) > 0)
+                    yield return kind;
             }
         }
 
