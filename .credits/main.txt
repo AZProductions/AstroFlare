@@ -1,1 +1,3 @@
 The compiler is inspired by Building a Compiler from Immo Landwerth (minsk-compiler.net) under the MIT license.
+
+Color themes used from HandyControl (hosseini.ninja) under the MIT license.
