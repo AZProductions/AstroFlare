@@ -1,0 +1,40 @@
+namespace AstroFlare.UI.Colors
+{
+    public enum ColorKind
+    {
+        LightPrimaryColor,
+        PrimaryColor,
+        DarkPrimaryColor,
+        LightDangerColor,
+        DangerColor,
+        DarkDangerColor,
+        LightWarningColor,
+        WarningColor,
+        DarkWarningColor,
+        LightInfoColor,
+        InfoColor,
+        DarkInfoColor,
+        LightSuccessColor,
+        SuccessColor,
+        DarkSuccessColor,
+        PrimaryTextColor,
+        SecondaryTextColor,
+        ThirdlyTextColor,
+        ReverseTextColor,
+        TextIconColor,
+        BorderColor,
+        SecondaryBorderColor,
+        BackgroundColor,
+        RegionColor,
+        SecondaryRegionColor,
+        ThirdlyRegionColor,
+        TitleColor,
+        SecondaryTitleColor,
+        DefaultColor,
+        DarkDefaultColor,
+        AccentColor,
+        DarkAccentColor,
+        DarkMaskColor,
+        DarkOpacityColor
+    }
+}
