@@ -8,7 +8,7 @@ namespace AstroFlare.UI.Theme
     using System.Text.RegularExpressions;
     public class ThemeBrushConverter
     {
-      /// <summary>
+             /// <summary>
       /// Convert a hex string to a .NET Color object.
       /// </summary>
       /// <param name="hexColor">a hex string: "FFFFFF", "#000000"</param>
@@ -60,5 +60,4 @@ namespace AstroFlare.UI.Theme
          return newnum;
       }
     }
-   }
 }

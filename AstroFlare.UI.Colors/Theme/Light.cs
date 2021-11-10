@@ -1,6 +1,6 @@
 namespace AstroFlare.UI.Colors
 {
-    public class ColorsLight
+    public class Light
     {
         public static readonly string LightPrimaryColor = "#f3fbff";
         public static readonly string PrimaryColor = "#326cf3";

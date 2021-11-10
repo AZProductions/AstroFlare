@@ -1,10 +1,12 @@
+﻿using System;
+
 namespace AstroFlare.UI.Colors
 {
-    public class ColorsViolet
+    public class Dark
     {
-        public static readonly string LightPrimaryColor = "#fefbff";
-        public static readonly string PrimaryColor = "#7b1fa2";
-        public static readonly string DarkPrimaryColor = "#7b1fa2";
+        public static readonly string LightPrimaryColor = "#f3fbff";
+        public static readonly string PrimaryColor = "#326cf3";
+        public static readonly string DarkPrimaryColor = "#326cf3";
         public static readonly string LightDangerColor = "#fff6f7";
         public static readonly string DangerColor = "#db3340";
         public static readonly string DarkDangerColor = "#db3340";
@@ -28,8 +30,8 @@ namespace AstroFlare.UI.Colors
         public static readonly string RegionColor = "#ffffff";
         public static readonly string SecondaryRegionColor = "#eeeeee";
         public static readonly string ThirdlyRegionColor = "White";
-        public static readonly string TitleColor = "#7b1fa2";
-        public static readonly string SecondaryTitleColor = "#7b1fa2";
+        public static readonly string TitleColor = "#326cf3";
+        public static readonly string SecondaryTitleColor = "#326cf3";
         public static readonly string DefaultColor = "White";
         public static readonly string DarkDefaultColor = "#f5f5f5";
         public static readonly string AccentColor = "#f8491e";
