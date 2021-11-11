@@ -1,3 +1,5 @@
+using AstroFlare.Compiler.CodeAnalysis.Text;
+
 namespace AstroFlare.Compiler.CodeAnalysis
 {
     public sealed class Diagnostic

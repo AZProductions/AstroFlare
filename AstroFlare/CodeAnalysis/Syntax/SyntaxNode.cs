@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using AstroFlare.Compiler.CodeAnalysis.Text;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
