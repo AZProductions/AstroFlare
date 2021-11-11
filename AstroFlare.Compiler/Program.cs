@@ -17,6 +17,7 @@ namespace AstroFlare.Compiler
             var showTree = false;
             var variables = new Dictionary<VariableSymbol, object>();
             var textBuilder = new StringBuilder();
+            Compilation previous = null;
 
             while (true)
             {
@@ -49,6 +50,12 @@ namespace AstroFlare.Compiler
                         Console.Clear();
                         continue;
                     }
+                    else if (input == "#reset")
+                    {
+                        previous = null;
+                        variables.Clear();
+                        continue;
+                    }
                 }
 
                 textBuilder.AppendLine(input);
@@ -59,7 +66,10 @@ namespace AstroFlare.Compiler
                 if (!isBlank && syntaxTree.Diagnostics.Any())
                     continue;
 
-                var compilation = new Compilation(syntaxTree);
+                var compilation = previous == null
+                                    ? new Compilation(syntaxTree)
+                                    : previous.ContinueWith(syntaxTree);
+
                 var result = compilation.Evaluate(variables);
 
                 if (showTree)
@@ -72,6 +82,7 @@ namespace AstroFlare.Compiler
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine(result.Value);
                     Console.ResetColor();
+                    previous = compilation;
                 }
                 else
                 {
