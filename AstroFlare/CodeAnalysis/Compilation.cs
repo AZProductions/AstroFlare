@@ -19,7 +19,7 @@ namespace AstroFlare.Compiler.CodeAnalysis
         public EvaluationResult Evaluate(Dictionary<VariableSymbol, object> variables)
         {
             var binder = new Binder(variables);
-            var boundExpression = binder.BindExpression(SyntaxTree.Root);
+            var boundExpression = binder.BindExpression(SyntaxTree.Root.Expression);
 
             var diagnostics = SyntaxTree.Diagnostics.Concat(binder.Diagnostics).ToImmutableArray();
             if (diagnostics.Any())
