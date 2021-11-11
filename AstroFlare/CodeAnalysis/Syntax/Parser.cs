@@ -1,4 +1,5 @@
 using AstroFlare.Compiler.CodeAnalysis.Binding;
+using AstroFlare.Compiler.CodeAnalysis.Text;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 
@@ -7,11 +8,11 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
     internal sealed class Parser
     {
         private readonly DiagnosticBag _diagnostics = new DiagnosticBag();
+        private readonly SourceText _text;
         private readonly ImmutableArray<SyntaxToken> _tokens;
-
         private int _position;
 
-        public Parser(string text)
+        public Parser(SourceText text)
         {
             var tokens = new List<SyntaxToken>();
 
@@ -28,6 +29,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                 }
             } while (token.Kind != SyntaxKind.EndOfFileToken);
 
+            _text = text;
             _tokens = tokens.ToImmutableArray();
             _diagnostics.AddRange(lexer.Diagnostics);
         }
@@ -65,7 +67,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         {
             var expresion = ParseExpression();
             var endOfFileToken = MatchToken(SyntaxKind.EndOfFileToken);
-            return new SyntaxTree(_diagnostics.ToImmutableArray(), expresion, endOfFileToken);
+            return new SyntaxTree(_text, _diagnostics.ToImmutableArray(), expresion, endOfFileToken);
         }
 
         private ExpressionSyntax ParseExpression()
