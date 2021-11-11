@@ -70,12 +70,19 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     _kind = SyntaxKind.CloseParenthesisToken;
                     _position++;
                     break;
+                case '{':
+                    _kind = SyntaxKind.OpenBraceToken;
+                    _position++;
+                    break;
+                case '}':
+                    _kind = SyntaxKind.CloseBraceToken;
+                    _position++;
+                    break;
                 case '&':
                     if (Lookahead == '&')
                     {
                         _kind = SyntaxKind.AmpersandAmpersandToken;
                         _position += 2;
-                        break;
                     }
                     break;
                 case '|':
@@ -83,7 +90,6 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     {
                         _kind = SyntaxKind.PipePipeToken;
                         _position += 2;
-                        break;
                     }
                     break;
                 case '=':
@@ -94,8 +100,8 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     }
                     else
                     {
-                        _position++;
                         _kind = SyntaxKind.EqualsEqualsToken;
+                        _position++;
                     }
                     break;
                 case '!':
@@ -120,7 +126,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                 case '7':
                 case '8':
                 case '9':
-                    ReadNumberToken();
+                    ReadNumber();
                     break;
                 case ' ':
                 case '\t':
@@ -161,7 +167,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
             _kind = SyntaxKind.WhitespaceToken;
         }
 
-        private void ReadNumberToken()
+        private void ReadNumber()
         {
             while (char.IsDigit(Current))
                 _position++;
