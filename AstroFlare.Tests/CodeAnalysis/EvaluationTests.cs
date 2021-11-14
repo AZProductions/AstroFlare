@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
-using AstroFlare.Compiler.CodeAnalysis;
-using AstroFlare.Compiler.CodeAnalysis.Syntax;
+using AstroFlare.Compiler;
+using AstroFlare.Compiler.Syntax;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis
@@ -30,7 +29,7 @@ namespace AstroFlare.Tests.CodeAnalysis
         [InlineData("!true", false)]
         [InlineData("!false", true)]
         [InlineData("(a = 10) * a", 100)]
-        public void SyntaxFact_GetText_RoundTrips(string text, object expectedValue)
+        public void Evaluator_Computes_CorrectValues(string text, object expectedValue)
         {
             var syntaxTree = SyntaxTree.Parse(text);
             var compilation = new Compilation(syntaxTree);

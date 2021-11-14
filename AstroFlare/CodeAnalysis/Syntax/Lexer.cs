@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using AstroFlare.Compiler.CodeAnalysis.Text;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
@@ -70,6 +69,14 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     _kind = SyntaxKind.CloseParenthesisToken;
                     _position++;
                     break;
+                case '{':
+                    _kind = SyntaxKind.OpenBraceToken;
+                    _position++;
+                    break;
+                case '}':
+                    _kind = SyntaxKind.CloseBraceToken;
+                    _position++;
+                    break;
                 case '&':
                     if (Lookahead == '&')
                     {
@@ -108,16 +115,8 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                         _position++;
                     }
                     break;
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
+                case '0': case '1': case '2': case '3': case '4':
+                case '5': case '6': case '7': case '8': case '9':
                     ReadNumber();
                     break;
                 case ' ':

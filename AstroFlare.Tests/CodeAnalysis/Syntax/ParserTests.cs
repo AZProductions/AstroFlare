@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using AstroFlare.Compiler.CodeAnalysis.Syntax;
-using AstroFlare.Compiler.Tests.CodeAnalysis.Syntax;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis.Syntax
@@ -121,7 +120,8 @@ namespace AstroFlare.Tests.CodeAnalysis.Syntax
         {
             var syntaxTree = SyntaxTree.Parse(text);
             var root = syntaxTree.Root;
-            return root.Expression;
+            var statement = root.Statement;
+            return Assert.IsType<ExpressionStatementSyntax>(statement).Expression;
         }
 
         public static IEnumerable<object[]> GetBinaryOperatorPairsData()

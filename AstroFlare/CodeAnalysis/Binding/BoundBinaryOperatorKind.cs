@@ -1,6 +1,6 @@
-﻿namespace AstroFlare.Compiler.CodeAnalysis.Binding
+namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {
-    internal enum BoundBinaryOperatorKind 
+    internal enum BoundBinaryOperatorKind
     {
         Addition,
         Subtraction,

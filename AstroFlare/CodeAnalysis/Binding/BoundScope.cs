@@ -1,12 +1,10 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Text;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {
     internal sealed class BoundScope
-    {
+    {        
         private Dictionary<string, VariableSymbol> _variables = new Dictionary<string, VariableSymbol>();
 
         public BoundScope(BoundScope parent)
@@ -32,7 +30,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
 
             if (Parent == null)
                 return false;
-
+            
             return Parent.TryLookup(name, out variable);
         }
 

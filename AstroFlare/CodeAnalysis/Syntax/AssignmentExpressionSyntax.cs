@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public sealed class AssignmentExpressionSyntax : ExpressionSyntax
@@ -16,4 +14,4 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         public SyntaxToken EqualsToken { get; }
         public ExpressionSyntax Expression { get; }
     }
-} 
+}

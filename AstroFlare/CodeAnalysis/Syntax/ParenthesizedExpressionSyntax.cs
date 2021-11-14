@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public sealed class ParenthesizedExpressionSyntax : ExpressionSyntax

@@ -4,7 +4,7 @@ using System.Linq;
 using AstroFlare.Compiler.CodeAnalysis.Syntax;
 using Xunit;
 
-namespace AstroFlare.Compiler.Tests.CodeAnalysis.Syntax
+namespace AstroFlare.Tests.CodeAnalysis.Syntax
 {
     internal sealed class AssertingEnumerator : IDisposable
     {
@@ -36,7 +36,7 @@ namespace AstroFlare.Compiler.Tests.CodeAnalysis.Syntax
             stack.Push(node);
 
             while (stack.Count > 0)
-            {                
+            {
                 var n = stack.Pop();
                 yield return n;
 

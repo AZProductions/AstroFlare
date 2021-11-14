@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AstroFlare.Compiler;
 using AstroFlare.Compiler.CodeAnalysis.Binding;
 
 namespace AstroFlare.Compiler.CodeAnalysis

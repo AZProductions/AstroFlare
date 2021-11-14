@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {
-    internal sealed class BoundLiteralExpression : BoundExpression 
+    internal sealed class BoundLiteralExpression : BoundExpression
     {
         public BoundLiteralExpression(object value)
         {

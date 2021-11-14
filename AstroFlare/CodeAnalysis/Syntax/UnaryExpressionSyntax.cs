@@ -1,6 +1,3 @@
-﻿using AstroFlare.Compiler.CodeAnalysis.Binding;
-using System.Collections.Generic;
-
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public sealed class UnaryExpressionSyntax : ExpressionSyntax

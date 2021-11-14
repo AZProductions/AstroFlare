@@ -1,6 +1,6 @@
-﻿namespace AstroFlare.Compiler.CodeAnalysis.Binding
+namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {
-    internal abstract class BoundNode 
+    internal abstract class BoundNode
     {
         public abstract BoundNodeKind Kind { get; }
     }

@@ -1,9 +1,4 @@
-﻿using AstroFlare.Compiler.CodeAnalysis.Text;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AstroFlare.Compiler.CodeAnalysis.Text;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis.Text

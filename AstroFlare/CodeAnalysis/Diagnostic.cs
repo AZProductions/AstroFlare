@@ -15,4 +15,4 @@ namespace AstroFlare.Compiler.CodeAnalysis
 
         public override string ToString() => Message;
     }
-} 
+}

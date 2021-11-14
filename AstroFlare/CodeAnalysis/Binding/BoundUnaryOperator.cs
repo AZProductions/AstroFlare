@@ -1,5 +1,5 @@
 using System;
-using  AstroFlare.Compiler.CodeAnalysis.Syntax;
+using AstroFlare.Compiler.CodeAnalysis.Syntax;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {

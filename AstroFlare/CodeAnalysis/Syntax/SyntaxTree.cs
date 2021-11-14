@@ -1,8 +1,6 @@
-using AstroFlare.Compiler.CodeAnalysis.Binding;
-using AstroFlare.Compiler.CodeAnalysis.Text;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
+using AstroFlare.Compiler.CodeAnalysis.Text;
 
 namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
