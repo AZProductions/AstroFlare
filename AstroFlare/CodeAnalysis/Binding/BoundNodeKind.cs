@@ -4,6 +4,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
     {
         // Statements
         BlockStatement,
+        VariableDeclaration,
         ExpressionStatement,
 
         // Expressions

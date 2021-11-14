@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AstroFlare.ConsoleSDK;
+using System.Text;
 using AstroFlare.Compiler.CodeAnalysis;
 using AstroFlare.Compiler.CodeAnalysis.Syntax;
-using AstroFlare.Compiler.CodeAnalysis.Binding;
 using AstroFlare.Compiler.CodeAnalysis.Text;
-using System.Text;
 
 namespace AstroFlare.Compiler
 {
