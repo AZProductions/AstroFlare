@@ -121,8 +121,7 @@ namespace AstroFlare.Tests.CodeAnalysis.Syntax
         {
             var syntaxTree = SyntaxTree.Parse(text);
             var root = syntaxTree.Root;
-            var statement = root.Statement;
-            return Assert.IsType<ExpressionStatementSyntax>(statement).Expression;
+            return root.Expression;
         }
 
         public static IEnumerable<object[]> GetBinaryOperatorPairsData()

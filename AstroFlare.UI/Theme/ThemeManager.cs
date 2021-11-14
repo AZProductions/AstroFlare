@@ -6,7 +6,7 @@ namespace AstroFlare.UI.Theme
     {
 
         private static ThemeKind currentTheme;
-        public static ThemeManager Instance { get; private set; }
+        public static ThemeManager? Instance { get; private set; }
         public static ThemeKind CurrentTheme { get => currentTheme; set => currentTheme = value; }
 
         public ThemeManager(ThemeKind kind)

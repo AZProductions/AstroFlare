@@ -65,41 +65,9 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 
         public CompilationUnitSyntax ParseCompilationUnit()
         {
-            var statement = ParseStatement();
+            var expresion = ParseExpression();
             var endOfFileToken = MatchToken(SyntaxKind.EndOfFileToken);
-            return new CompilationUnitSyntax(statement, endOfFileToken);
-        }
-
-        private StatementSyntax ParseStatement()
-        {
-            if (Current.Kind == SyntaxKind.OpenBraceToken)
-                return ParseBlockStatement();
-
-            return ParseExpressionStatement();
-        }
-
-        private BlockStatementSyntax ParseBlockStatement()
-        {
-            var statements = ImmutableArray.CreateBuilder<StatementSyntax>();
-
-            var openBraceToken = MatchToken(SyntaxKind.OpenBraceToken);
-
-            while (Current.Kind != SyntaxKind.EndOfFileToken &&
-                   Current.Kind != SyntaxKind.CloseBraceToken)
-            {
-                var statement = ParseStatement();
-                statements.Add(statement);
-            }
-
-            var closeBraceToken = MatchToken(SyntaxKind.CloseBraceToken);
-
-            return new BlockStatementSyntax(openBraceToken, statements.ToImmutable(), closeBraceToken);
-        }
-
-        private ExpressionStatementSyntax ParseExpressionStatement()
-        {
-            var expression = ParseExpression();
-            return new ExpressionStatementSyntax(expression);
+            return new CompilationUnitSyntax(expresion, endOfFileToken);
         }
 
         private ExpressionSyntax ParseExpression()

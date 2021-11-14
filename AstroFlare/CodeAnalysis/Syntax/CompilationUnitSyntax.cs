@@ -6,14 +6,14 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
 {
     public sealed class CompilationUnitSyntax : SyntaxNode
     {
-        public CompilationUnitSyntax(StatementSyntax statement, SyntaxToken endOfFileToken)
+        public CompilationUnitSyntax(ExpressionSyntax expression, SyntaxToken endOfFileToken)
         {
-            Statement = statement;
+            Expression = expression;
             EndOfFileToken = endOfFileToken;
         }
 
         public override SyntaxKind Kind => SyntaxKind.CompilationUnit;
-        public StatementSyntax Statement { get; }
+        public ExpressionSyntax Expression { get; }
         public SyntaxToken EndOfFileToken { get; }
     }
 }

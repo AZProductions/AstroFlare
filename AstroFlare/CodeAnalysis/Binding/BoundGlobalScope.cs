@@ -7,17 +7,17 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
 {
     internal sealed class BoundGlobalScope
     {
-        public BoundGlobalScope(BoundGlobalScope previous, ImmutableArray<Diagnostic> diagnostics, ImmutableArray<VariableSymbol> variables, BoundStatement statement)
+        public BoundGlobalScope(BoundGlobalScope previous, ImmutableArray<Diagnostic> diagnostics, ImmutableArray<VariableSymbol> variables, BoundExpression expression)
         {
             Previous = previous;
             Diagnostics = diagnostics;
             Variables = variables;
-            Statement = statement;
+            Expression = expression;
         }
 
         public BoundGlobalScope Previous { get; }
         public ImmutableArray<Diagnostic> Diagnostics { get; }
         public ImmutableArray<VariableSymbol> Variables { get; }
-        public BoundStatement Statement { get; }
+        public BoundExpression Expression { get; }
     }
 }
