@@ -13,10 +13,18 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         SlashToken,
         BangToken,
         EqualsToken,
+        TildeToken,
+        HatToken,
+        AmpersandToken,
         AmpersandAmpersandToken,
+        PipeToken,
         PipePipeToken,
         EqualsEqualsToken,
         BangEqualsToken,
+        LessToken,
+        LessOrEqualsToken,
+        GreaterToken,
+        GreaterOrEqualsToken,
         OpenParenthesisToken,
         CloseParenthesisToken,
         OpenBraceToken,
@@ -24,17 +32,26 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         IdentifierToken,
 
         // Keywords
+        ElseKeyword,
         FalseKeyword,
+        ForKeyword,
+        IfKeyword,
         LetKeyword,
+        ToKeyword,
         TrueKeyword,
         VarKeyword,
+        WhileKeyword,
 
         // Nodes
         CompilationUnit,
+        ElseClause,
 
         // Statements
         BlockStatement,
         VariableDeclaration,
+        IfStatement,
+        WhileStatement,
+        ForStatement,
         ExpressionStatement,
 
         // Expressions

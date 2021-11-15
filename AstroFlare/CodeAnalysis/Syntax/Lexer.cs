@@ -77,18 +77,36 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     _kind = SyntaxKind.CloseBraceToken;
                     _position++;
                     break;
+                case '~':
+                    _kind = SyntaxKind.TildeToken;
+                    _position++;
+                    break;
+                case '^':
+                    _kind = SyntaxKind.HatToken;
+                    _position++;
+                    break;
                 case '&':
-                    if (Lookahead == '&')
+                    _position++;
+                    if (Current != '&')
+                    {
+                        _kind = SyntaxKind.AmpersandToken;
+                    }
+                    else
                     {
                         _kind = SyntaxKind.AmpersandAmpersandToken;
-                        _position += 2;
+                        _position++;
                     }
                     break;
                 case '|':
-                    if (Lookahead == '|')
+                    _position++;
+                    if (Current != '|')
+                    {
+                        _kind = SyntaxKind.PipeToken;
+                    }
+                    else
                     {
                         _kind = SyntaxKind.PipePipeToken;
-                        _position += 2;
+                        _position++;
                     }
                     break;
                 case '=':
@@ -112,6 +130,30 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
                     else
                     {
                         _kind = SyntaxKind.BangEqualsToken;
+                        _position++;
+                    }
+                    break;
+                case '<':
+                    _position++;
+                    if (Current != '=')
+                    {
+                        _kind = SyntaxKind.LessToken;
+                    }
+                    else
+                    {
+                        _kind = SyntaxKind.LessOrEqualsToken;
+                        _position++;
+                    }
+                    break;
+                case '>':
+                    _position++;
+                    if (Current != '=')
+                    {
+                        _kind = SyntaxKind.GreaterToken;
+                    }
+                    else
+                    {
+                        _kind = SyntaxKind.GreaterOrEqualsToken;
                         _position++;
                     }
                     break;

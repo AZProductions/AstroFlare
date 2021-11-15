@@ -5,6 +5,12 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
         // Statements
         BlockStatement,
         VariableDeclaration,
+        IfStatement,
+        WhileStatement,
+        ForStatement,
+        LabelStatement,
+        GotoStatement,
+        ConditionalGotoStatement,
         ExpressionStatement,
 
         // Expressions

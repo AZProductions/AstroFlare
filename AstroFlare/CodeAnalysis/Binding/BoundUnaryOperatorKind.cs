@@ -4,6 +4,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
     {
         Identity,
         Negation,
-        LogicalNegation
+        LogicalNegation,
+        OnesComplement
     }
 }
