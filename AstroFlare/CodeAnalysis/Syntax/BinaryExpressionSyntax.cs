@@ -1,8 +1,9 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
-    public sealed class BinaryExpressionSyntax : ExpressionSyntax
+    public sealed partial class BinaryExpressionSyntax : ExpressionSyntax
     {
-        public BinaryExpressionSyntax(ExpressionSyntax left, SyntaxToken operatorToken, ExpressionSyntax right)
+        internal BinaryExpressionSyntax(SyntaxTree syntaxTree, ExpressionSyntax left, SyntaxToken operatorToken, ExpressionSyntax right)
+            : base(syntaxTree)
         {
             Left = left;
             OperatorToken = operatorToken;

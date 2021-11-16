@@ -1,15 +1,19 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Symbols;
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
-    internal sealed class BoundForStatement : BoundStatement
+    internal sealed class BoundForStatement : BoundLoopStatement
     {
-        public BoundForStatement(VariableSymbol variable, BoundExpression lowerBound, BoundExpression upperBound, BoundStatement body)
+        public BoundForStatement(SyntaxNode syntax, VariableSymbol variable, BoundExpression lowerBound, BoundExpression upperBound, BoundStatement body, BoundLabel breakLabel, BoundLabel continueLabel)
+            : base(syntax, breakLabel, continueLabel)
         {
             Variable = variable;
             LowerBound = lowerBound;
             UpperBound = upperBound;
             Body = body;
         }
-        
+
         public override BoundNodeKind Kind => BoundNodeKind.ForStatement;
         public VariableSymbol Variable { get; }
         public BoundExpression LowerBound { get; }

@@ -1,10 +1,11 @@
 using System.Collections.Immutable;
 
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
-    public sealed class BlockStatementSyntax : StatementSyntax
+    public sealed partial class BlockStatementSyntax : StatementSyntax
     {
-        public BlockStatementSyntax(SyntaxToken openBraceToken, ImmutableArray<StatementSyntax> statements, SyntaxToken closeBraceToken)
+        internal BlockStatementSyntax(SyntaxTree syntaxTree, SyntaxToken openBraceToken, ImmutableArray<StatementSyntax> statements, SyntaxToken closeBraceToken)
+            : base(syntaxTree)
         {
             OpenBraceToken = openBraceToken;
             Statements = statements;

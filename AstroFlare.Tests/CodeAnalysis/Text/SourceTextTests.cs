@@ -1,4 +1,4 @@
-using AstroFlare.Compiler.CodeAnalysis.Text;
+using AstroFlare.CodeAnalysis.Text;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis.Text

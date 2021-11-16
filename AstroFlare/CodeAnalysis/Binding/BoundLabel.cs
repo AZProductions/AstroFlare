@@ -1,8 +1,8 @@
-namespace AstroFlare.Compiler.CodeAnalysis
+namespace AstroFlare.CodeAnalysis.Binding
 {
-    internal sealed class LabelSymbol
+    internal sealed class BoundLabel
     {
-        internal LabelSymbol(string name)
+        internal BoundLabel(string name)
         {
             Name = name;
         }

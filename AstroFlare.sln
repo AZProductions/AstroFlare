@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.UI", "AstroFlare
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AstroFlare.UI.Colors.Generator", "AstroFlare.UI.Colors.Generator\AstroFlare.UI.Colors.Generator.csproj", "{4A5F66ED-D246-457F-A59E-C8113AD7D016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flare", "Flare\Flare.csproj", "{C17E5C8D-12EA-41EF-BF9C-F88521C9C4D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flare", "Flare\Flare.csproj", "{C17E5C8D-12EA-41EF-BF9C-F88521C9C4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Generators", "AstroFlare.Generators\AstroFlare.Generators.csproj", "{EDB5F7B4-0B2E-449A-972F-67DB6B18CAFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "afc", "afc\afc.csproj", "{1B07AC08-DD72-4CE9-B284-806387B5075D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "afi", "afi\afi.csproj", "{A5C651E9-093E-4C5F-B580-AEA111799F39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{C17E5C8D-12EA-41EF-BF9C-F88521C9C4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C17E5C8D-12EA-41EF-BF9C-F88521C9C4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C17E5C8D-12EA-41EF-BF9C-F88521C9C4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB5F7B4-0B2E-449A-972F-67DB6B18CAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB5F7B4-0B2E-449A-972F-67DB6B18CAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB5F7B4-0B2E-449A-972F-67DB6B18CAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB5F7B4-0B2E-449A-972F-67DB6B18CAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B07AC08-DD72-4CE9-B284-806387B5075D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B07AC08-DD72-4CE9-B284-806387B5075D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B07AC08-DD72-4CE9-B284-806387B5075D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B07AC08-DD72-4CE9-B284-806387B5075D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C651E9-093E-4C5F-B580-AEA111799F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C651E9-093E-4C5F-B580-AEA111799F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C651E9-093E-4C5F-B580-AEA111799F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C651E9-093E-4C5F-B580-AEA111799F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

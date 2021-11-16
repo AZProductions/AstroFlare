@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using AstroFlare.Compiler.CodeAnalysis.Syntax;
+using System.Diagnostics;
+using AstroFlare.CodeAnalysis.Syntax;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis.Syntax
@@ -16,6 +17,9 @@ namespace AstroFlare.Tests.CodeAnalysis.Syntax
             var op2Text = SyntaxFacts.GetText(op2);
             var text = $"a {op1Text} b {op2Text} c";
             var expression = ParseExpression(text);
+
+            Debug.Assert(op1Text != null);
+            Debug.Assert(op2Text != null);
 
             if (op1Precedence >= op2Precedence)
             {
@@ -74,6 +78,9 @@ namespace AstroFlare.Tests.CodeAnalysis.Syntax
             var text = $"{unaryText} a {binaryText} b";
             var expression = ParseExpression(text);
 
+            Debug.Assert(unaryText != null);
+            Debug.Assert(binaryText != null);
+
             if (unaryPrecedence >= binaryPrecedence)
             {
                 //   binary
@@ -120,8 +127,9 @@ namespace AstroFlare.Tests.CodeAnalysis.Syntax
         {
             var syntaxTree = SyntaxTree.Parse(text);
             var root = syntaxTree.Root;
-            var statement = root.Statement;
-            return Assert.IsType<ExpressionStatementSyntax>(statement).Expression;
+            var member = Assert.Single(root.Members);
+            var globalStatement = Assert.IsType<GlobalStatementSyntax>(member);
+            return Assert.IsType<ExpressionStatementSyntax>(globalStatement.Statement).Expression;
         }
 
         public static IEnumerable<object[]> GetBinaryOperatorPairsData()

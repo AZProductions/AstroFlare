@@ -1,23 +1,38 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
     public enum SyntaxKind
     {
-        // Tokens
         BadToken,
+
+        // Trivia
+        SkippedTextTrivia,
+        LineBreakTrivia,
+        WhitespaceTrivia,
+        SingleLineCommentTrivia,
+        MultiLineCommentTrivia,
+
+        // Tokens
         EndOfFileToken,
-        WhitespaceToken,
         NumberToken,
+        StringToken,
         PlusToken,
+        PlusEqualsToken,
         MinusToken,
+        MinusEqualsToken,
         StarToken,
+        StarEqualsToken,
         SlashToken,
+        SlashEqualsToken,
         BangToken,
         EqualsToken,
         TildeToken,
         HatToken,
+        HatEqualsToken,
         AmpersandToken,
         AmpersandAmpersandToken,
+        AmpersandEqualsToken,
         PipeToken,
+        PipeEqualsToken,
         PipePipeToken,
         EqualsEqualsToken,
         BangEqualsToken,
@@ -29,21 +44,32 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         CloseParenthesisToken,
         OpenBraceToken,
         CloseBraceToken,
+        ColonToken,
+        CommaToken,
         IdentifierToken,
 
         // Keywords
+        BreakKeyword,
+        ContinueKeyword,
         ElseKeyword,
         FalseKeyword,
         ForKeyword,
+        FunctionKeyword,
         IfKeyword,
         LetKeyword,
+        ReturnKeyword,
         ToKeyword,
         TrueKeyword,
         VarKeyword,
         WhileKeyword,
+        DoKeyword,
 
         // Nodes
         CompilationUnit,
+        FunctionDeclaration,
+        GlobalStatement,
+        Parameter,
+        TypeClause,
         ElseClause,
 
         // Statements
@@ -51,7 +77,11 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         VariableDeclaration,
         IfStatement,
         WhileStatement,
+        DoWhileStatement,
         ForStatement,
+        BreakStatement,
+        ContinueStatement,
+        ReturnStatement,
         ExpressionStatement,
 
         // Expressions
@@ -59,7 +89,9 @@ namespace AstroFlare.Compiler.CodeAnalysis.Syntax
         NameExpression,
         UnaryExpression,
         BinaryExpression,
+        CompoundAssignmentExpression,
         ParenthesizedExpression,
         AssignmentExpression,
+        CallExpression,
     }
 }

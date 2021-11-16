@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using AstroFlare.Compiler.CodeAnalysis.Syntax;
+using AstroFlare.CodeAnalysis.Syntax;
 using Xunit;
 
 namespace AstroFlare.Tests.CodeAnalysis.Syntax

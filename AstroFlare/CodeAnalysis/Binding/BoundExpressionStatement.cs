@@ -1,8 +1,11 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundExpressionStatement : BoundStatement
     {
-        public BoundExpressionStatement(BoundExpression expression)
+        public BoundExpressionStatement(SyntaxNode syntax, BoundExpression expression)
+            : base(syntax)
         {
             Expression = expression;
         }

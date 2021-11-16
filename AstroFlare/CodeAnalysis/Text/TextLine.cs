@@ -1,4 +1,4 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Text
+namespace AstroFlare.CodeAnalysis.Text
 {
     public sealed class TextLine
     {

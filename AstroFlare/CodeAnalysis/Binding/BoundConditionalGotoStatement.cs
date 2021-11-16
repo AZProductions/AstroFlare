@@ -1,8 +1,11 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundConditionalGotoStatement : BoundStatement
     {
-        public BoundConditionalGotoStatement(LabelSymbol label, BoundExpression condition, bool jumpIfTrue = true)
+        public BoundConditionalGotoStatement(SyntaxNode syntax, BoundLabel label, BoundExpression condition, bool jumpIfTrue = true)
+            : base(syntax)
         {
             Label = label;
             Condition = condition;
@@ -10,7 +13,7 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
         }
 
         public override BoundNodeKind Kind => BoundNodeKind.ConditionalGotoStatement;
-        public LabelSymbol Label { get; }
+        public BoundLabel Label { get; }
         public BoundExpression Condition { get; }
         public bool JumpIfTrue { get; }
     }

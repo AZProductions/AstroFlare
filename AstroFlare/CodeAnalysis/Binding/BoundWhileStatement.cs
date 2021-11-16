@@ -1,8 +1,11 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
-    internal sealed class BoundWhileStatement : BoundStatement
+    internal sealed class BoundWhileStatement : BoundLoopStatement
     {
-        public BoundWhileStatement(BoundExpression condition, BoundStatement body)
+        public BoundWhileStatement(SyntaxNode syntax, BoundExpression condition, BoundStatement body, BoundLabel breakLabel, BoundLabel continueLabel)
+            : base(syntax, breakLabel, continueLabel)
         {
             Condition = condition;
             Body = body;

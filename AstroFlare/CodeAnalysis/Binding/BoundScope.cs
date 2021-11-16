@@ -1,42 +1,60 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
+using AstroFlare.CodeAnalysis.Symbols;
 
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundScope
-    {        
-        private Dictionary<string, VariableSymbol> _variables = new Dictionary<string, VariableSymbol>();
+    {
+        private Dictionary<string, Symbol>? _symbols;
 
-        public BoundScope(BoundScope parent)
+        public BoundScope(BoundScope? parent)
         {
             Parent = parent;
         }
 
-        public BoundScope Parent { get; }
+        public BoundScope? Parent { get; }
 
-        public bool TryDeclare(VariableSymbol variable)
+        public bool TryDeclareVariable(VariableSymbol variable)
+            => TryDeclareSymbol(variable);
+
+        public bool TryDeclareFunction(FunctionSymbol function)
+            => TryDeclareSymbol(function);
+
+        private bool TryDeclareSymbol<TSymbol>(TSymbol symbol)
+            where TSymbol : Symbol
         {
-            if (_variables.ContainsKey(variable.Name))
+            if (_symbols == null)
+                _symbols = new Dictionary<string, Symbol>();
+            else if (_symbols.ContainsKey(symbol.Name))
                 return false;
 
-            _variables.Add(variable.Name, variable);
+            _symbols.Add(symbol.Name, symbol);
             return true;
         }
 
-        public bool TryLookup(string name, out VariableSymbol variable)
+        public Symbol? TryLookupSymbol(string name)
         {
-            if (_variables.TryGetValue(name, out variable))
-                return true;
+            if (_symbols != null && _symbols.TryGetValue(name, out var symbol))
+                return symbol;
 
-            if (Parent == null)
-                return false;
-            
-            return Parent.TryLookup(name, out variable);
+            return Parent?.TryLookupSymbol(name);
         }
 
         public ImmutableArray<VariableSymbol> GetDeclaredVariables()
+            => GetDeclaredSymbols<VariableSymbol>();
+
+        public ImmutableArray<FunctionSymbol> GetDeclaredFunctions()
+            => GetDeclaredSymbols<FunctionSymbol>();
+
+        private ImmutableArray<TSymbol> GetDeclaredSymbols<TSymbol>()
+            where TSymbol : Symbol
         {
-            return _variables.Values.ToImmutableArray();
+            if (_symbols == null)
+                return ImmutableArray<TSymbol>.Empty;
+
+            return _symbols.Values.OfType<TSymbol>().ToImmutableArray();
         }
     }
 }

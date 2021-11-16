@@ -1,17 +1,18 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
-    public sealed class AssignmentExpressionSyntax : ExpressionSyntax
+    public sealed partial class AssignmentExpressionSyntax : ExpressionSyntax
     {
-        public AssignmentExpressionSyntax(SyntaxToken identifierToken, SyntaxToken equalsToken, ExpressionSyntax expression)
+        public AssignmentExpressionSyntax(SyntaxTree syntaxTree, SyntaxToken identifierToken, SyntaxToken assignmentToken, ExpressionSyntax expression)
+            : base(syntaxTree)
         {
             IdentifierToken = identifierToken;
-            EqualsToken = equalsToken;
+            AssignmentToken = assignmentToken;
             Expression = expression;
         }
 
         public override SyntaxKind Kind => SyntaxKind.AssignmentExpression;
         public SyntaxToken IdentifierToken { get; }
-        public SyntaxToken EqualsToken { get; }
+        public SyntaxToken AssignmentToken { get; }
         public ExpressionSyntax Expression { get; }
     }
 }
