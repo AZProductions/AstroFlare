@@ -1,8 +1,9 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
-    public sealed class ForStatementSyntax : StatementSyntax
+    public sealed partial class ForStatementSyntax : StatementSyntax
     {
-        public ForStatementSyntax(SyntaxToken keyword, SyntaxToken identifier, SyntaxToken equalsToken, ExpressionSyntax lowerBound, SyntaxToken toKeyword, ExpressionSyntax upperBound, StatementSyntax body)
+        internal ForStatementSyntax(SyntaxTree syntaxTree, SyntaxToken keyword, SyntaxToken identifier, SyntaxToken equalsToken, ExpressionSyntax lowerBound, SyntaxToken toKeyword, ExpressionSyntax upperBound, StatementSyntax body)
+            : base(syntaxTree)
         {
             Keyword = keyword;
             Identifier = identifier;

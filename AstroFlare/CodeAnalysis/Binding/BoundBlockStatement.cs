@@ -1,10 +1,12 @@
 using System.Collections.Immutable;
+using AstroFlare.CodeAnalysis.Syntax;
 
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundBlockStatement : BoundStatement
     {
-        public BoundBlockStatement(ImmutableArray<BoundStatement> statements)
+        public BoundBlockStatement(SyntaxNode syntax, ImmutableArray<BoundStatement> statements)
+            : base(syntax)
         {
             Statements = statements;
         }

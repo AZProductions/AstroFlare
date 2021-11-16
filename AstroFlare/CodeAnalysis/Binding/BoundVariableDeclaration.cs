@@ -1,8 +1,12 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Symbols;
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundVariableDeclaration : BoundStatement
     {
-        public BoundVariableDeclaration(VariableSymbol variable, BoundExpression initializer)
+        public BoundVariableDeclaration(SyntaxNode syntax, VariableSymbol variable, BoundExpression initializer)
+            : base(syntax)
         {
             Variable = variable;
             Initializer = initializer;

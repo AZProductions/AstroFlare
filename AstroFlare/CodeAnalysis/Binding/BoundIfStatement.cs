@@ -1,8 +1,11 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundIfStatement : BoundStatement
     {
-        public BoundIfStatement(BoundExpression condition, BoundStatement thenStatement, BoundStatement elseStatement)
+        public BoundIfStatement(SyntaxNode syntax, BoundExpression condition, BoundStatement thenStatement, BoundStatement? elseStatement)
+            : base(syntax)
         {
             Condition = condition;
             ThenStatement = thenStatement;
@@ -12,6 +15,6 @@ namespace AstroFlare.Compiler.CodeAnalysis.Binding
         public override BoundNodeKind Kind => BoundNodeKind.IfStatement;
         public BoundExpression Condition { get; }
         public BoundStatement ThenStatement { get; }
-        public BoundStatement ElseStatement { get; }
+        public BoundStatement? ElseStatement { get; }
     }
 }

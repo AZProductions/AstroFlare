@@ -1,13 +1,16 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+using AstroFlare.CodeAnalysis.Syntax;
+
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal sealed class BoundLabelStatement : BoundStatement
     {
-        public BoundLabelStatement(LabelSymbol label)
+        public BoundLabelStatement(SyntaxNode syntax, BoundLabel label)
+            : base(syntax)
         {
             Label = label;
         }
 
         public override BoundNodeKind Kind => BoundNodeKind.LabelStatement;
-        public LabelSymbol Label { get; }
+        public BoundLabel Label { get; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Text;
-using AstroFlare.Compiler.CodeAnalysis.Text;
+using AstroFlare.CodeAnalysis.Text;
 
 namespace AstroFlare.Tests.CodeAnalysis
 {
@@ -69,7 +69,7 @@ namespace AstroFlare.Tests.CodeAnalysis
 
             using (var reader = new StringReader(text))
             {
-                string line;
+                string? line;
                 while ((line = reader.ReadLine()) != null)
                     lines.Add(line);
             }

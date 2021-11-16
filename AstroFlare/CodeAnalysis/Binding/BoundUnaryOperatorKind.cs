@@ -1,4 +1,4 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Binding
+namespace AstroFlare.CodeAnalysis.Binding
 {
     internal enum BoundUnaryOperatorKind
     {

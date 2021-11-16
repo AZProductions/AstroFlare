@@ -1,4 +1,6 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Text
+using System;
+
+namespace AstroFlare.CodeAnalysis.Text
 {
     public struct TextSpan
     {
@@ -16,6 +18,12 @@ namespace AstroFlare.Compiler.CodeAnalysis.Text
         {
             var length = end - start;
             return new TextSpan(start, length);
+        }
+
+        public bool OverlapsWith(TextSpan span)
+        {
+            return Start < span.End &&
+                   End > span.Start;
         }
 
         public override string ToString() => $"{Start}..{End}";

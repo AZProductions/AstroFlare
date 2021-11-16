@@ -1,40 +1,73 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using AstroFlare.Compiler.CodeAnalysis.Binding;
+using System.Diagnostics;
+using AstroFlare.CodeAnalysis.Binding;
+using AstroFlare.CodeAnalysis.Symbols;
 
-namespace AstroFlare.Compiler.CodeAnalysis
+namespace AstroFlare.CodeAnalysis
 {
+    // TODO: Get rid of evaluator in favor of Emitter (see #113)
     internal sealed class Evaluator
     {
-        private readonly BoundBlockStatement _root;
-        private readonly Dictionary<VariableSymbol, object> _variables;
+        private readonly BoundProgram _program;
+        private readonly Dictionary<VariableSymbol, object> _globals;
+        private readonly Dictionary<FunctionSymbol, BoundBlockStatement> _functions = new Dictionary<FunctionSymbol, BoundBlockStatement>();
+        private readonly Stack<Dictionary<VariableSymbol, object>> _locals = new Stack<Dictionary<VariableSymbol, object>>();
+        private Random? _random;
 
-        private object _lastValue;
+        private object? _lastValue;
 
-        public Evaluator(BoundBlockStatement root, Dictionary<VariableSymbol, object> variables)
+        public Evaluator(BoundProgram program, Dictionary<VariableSymbol, object> variables)
         {
-            _root = root;
-            _variables = variables;
+            _program = program;
+            _globals = variables;
+            _locals.Push(new Dictionary<VariableSymbol, object>());
+
+            var current = program;
+            while (current != null)
+            {
+                foreach (var kv in current.Functions)
+                {
+                    var function = kv.Key;
+                    var body = kv.Value;
+                    _functions.Add(function, body);
+                }
+
+                current = current.Previous;
+            }
         }
 
-        public object Evaluate()
+        public object? Evaluate()
         {
-            var labelToIndex = new Dictionary<LabelSymbol, int>();
+            var function = _program.MainFunction ?? _program.ScriptFunction;
+            if (function == null)
+                return null;
 
-            for (var i = 0; i < _root.Statements.Length; i++)
+            var body = _functions[function];
+            return EvaluateStatement(body);
+        }
+
+        private object? EvaluateStatement(BoundBlockStatement body)
+        {
+            var labelToIndex = new Dictionary<BoundLabel, int>();
+
+            for (var i = 0; i < body.Statements.Length; i++)
             {
-                if (_root.Statements[i] is BoundLabelStatement l)
+                if (body.Statements[i] is BoundLabelStatement l)
                     labelToIndex.Add(l.Label, i + 1);
             }
 
             var index = 0;
 
-            while (index < _root.Statements.Length)
+            while (index < body.Statements.Length)
             {
-                var s = _root.Statements[index];
+                var s = body.Statements[index];
 
                 switch (s.Kind)
                 {
+                    case BoundNodeKind.NopStatement:
+                        index++;
+                        break;
                     case BoundNodeKind.VariableDeclaration:
                         EvaluateVariableDeclaration((BoundVariableDeclaration)s);
                         index++;
@@ -49,7 +82,7 @@ namespace AstroFlare.Compiler.CodeAnalysis
                         break;
                     case BoundNodeKind.ConditionalGotoStatement:
                         var cgs = (BoundConditionalGotoStatement)s;
-                        var condition = (bool)EvaluateExpression(cgs.Condition);
+                        var condition = (bool)EvaluateExpression(cgs.Condition)!;
                         if (condition == cgs.JumpIfTrue)
                             index = labelToIndex[cgs.Label];
                         else
@@ -58,10 +91,13 @@ namespace AstroFlare.Compiler.CodeAnalysis
                     case BoundNodeKind.LabelStatement:
                         index++;
                         break;
+                    case BoundNodeKind.ReturnStatement:
+                        var rs = (BoundReturnStatement)s;
+                        _lastValue = rs.Expression == null ? null : EvaluateExpression(rs.Expression);
+                        return _lastValue;
                     default:
                         throw new Exception($"Unexpected node {s.Kind}");
                 }
-
             }
 
             return _lastValue;
@@ -70,8 +106,10 @@ namespace AstroFlare.Compiler.CodeAnalysis
         private void EvaluateVariableDeclaration(BoundVariableDeclaration node)
         {
             var value = EvaluateExpression(node.Initializer);
-            _variables[node.Variable] = value;
+            Debug.Assert(value != null);
+
             _lastValue = value;
+            Assign(node.Variable, value);
         }
 
         private void EvaluateExpressionStatement(BoundExpressionStatement node)
@@ -79,12 +117,13 @@ namespace AstroFlare.Compiler.CodeAnalysis
             _lastValue = EvaluateExpression(node.Expression);
         }
 
-        private object EvaluateExpression(BoundExpression node)
+        private object? EvaluateExpression(BoundExpression node)
         {
+            if (node.ConstantValue != null)
+                return EvaluateConstantExpression(node);
+
             switch (node.Kind)
             {
-                case BoundNodeKind.LiteralExpression:
-                    return EvaluateLiteralExpression((BoundLiteralExpression)node);
                 case BoundNodeKind.VariableExpression:
                     return EvaluateVariableExpression((BoundVariableExpression)node);
                 case BoundNodeKind.AssignmentExpression:
@@ -93,31 +132,49 @@ namespace AstroFlare.Compiler.CodeAnalysis
                     return EvaluateUnaryExpression((BoundUnaryExpression)node);
                 case BoundNodeKind.BinaryExpression:
                     return EvaluateBinaryExpression((BoundBinaryExpression)node);
+                case BoundNodeKind.CallExpression:
+                    return EvaluateCallExpression((BoundCallExpression)node);
+                case BoundNodeKind.ConversionExpression:
+                    return EvaluateConversionExpression((BoundConversionExpression)node);
                 default:
                     throw new Exception($"Unexpected node {node.Kind}");
             }
         }
 
-        private static object EvaluateLiteralExpression(BoundLiteralExpression n)
+        private static object EvaluateConstantExpression(BoundExpression n)
         {
-            return n.Value;
+            Debug.Assert(n.ConstantValue != null);
+
+            return n.ConstantValue.Value;
         }
 
         private object EvaluateVariableExpression(BoundVariableExpression v)
         {
-            return _variables[v.Variable];
+            if (v.Variable.Kind == SymbolKind.GlobalVariable)
+            {
+                return _globals[v.Variable];
+            }
+            else
+            {
+                var locals = _locals.Peek();
+                return locals[v.Variable];
+            }
         }
 
         private object EvaluateAssignmentExpression(BoundAssignmentExpression a)
         {
             var value = EvaluateExpression(a.Expression);
-            _variables[a.Variable] = value;
+            Debug.Assert(value != null);
+
+            Assign(a.Variable, value);
             return value;
         }
 
         private object EvaluateUnaryExpression(BoundUnaryExpression u)
         {
             var operand = EvaluateExpression(u.Operand);
+
+            Debug.Assert(operand != null);
 
             switch (u.Op.Kind)
             {
@@ -139,10 +196,15 @@ namespace AstroFlare.Compiler.CodeAnalysis
             var left = EvaluateExpression(b.Left);
             var right = EvaluateExpression(b.Right);
 
+            Debug.Assert(left != null && right != null);
+
             switch (b.Op.Kind)
             {
                 case BoundBinaryOperatorKind.Addition:
-                    return (int)left + (int)right;
+                    if (b.Type == TypeSymbol.Int)
+                        return (int)left + (int)right;
+                    else
+                        return (string)left + (string)right;
                 case BoundBinaryOperatorKind.Subtraction:
                     return (int)left - (int)right;
                 case BoundBinaryOperatorKind.Multiplication:
@@ -150,17 +212,17 @@ namespace AstroFlare.Compiler.CodeAnalysis
                 case BoundBinaryOperatorKind.Division:
                     return (int)left / (int)right;
                 case BoundBinaryOperatorKind.BitwiseAnd:
-                    if (b.Type == (typeof(int)))
+                    if (b.Type == TypeSymbol.Int)
                         return (int)left & (int)right;
                     else
                         return (bool)left & (bool)right;
                 case BoundBinaryOperatorKind.BitwiseOr:
-                    if (b.Type == (typeof(int)))
+                    if (b.Type == TypeSymbol.Int)
                         return (int)left | (int)right;
                     else
                         return (bool)left | (bool)right;
                 case BoundBinaryOperatorKind.BitwiseXor:
-                    if (b.Type == (typeof(int)))
+                    if (b.Type == TypeSymbol.Int)
                         return (int)left ^ (int)right;
                     else
                         return (bool)left ^ (bool)right;
@@ -182,6 +244,76 @@ namespace AstroFlare.Compiler.CodeAnalysis
                     return (int)left >= (int)right;
                 default:
                     throw new Exception($"Unexpected binary operator {b.Op}");
+            }
+        }
+
+        private object? EvaluateCallExpression(BoundCallExpression node)
+        {
+            if (node.Function == BuiltinFunctions.Input)
+            {
+                return Console.ReadLine();
+            }
+            else if (node.Function == BuiltinFunctions.Print)
+            {
+                var value = EvaluateExpression(node.Arguments[0]);
+                Console.WriteLine(value);
+                return null;
+            }
+            else if (node.Function == BuiltinFunctions.Rnd)
+            {
+                var max = (int)EvaluateExpression(node.Arguments[0])!;
+                if (_random == null)
+                    _random = new Random();
+
+                return _random.Next(max);
+            }
+            else
+            {
+                var locals = new Dictionary<VariableSymbol, object>();
+                for (int i = 0; i < node.Arguments.Length; i++)
+                {
+                    var parameter = node.Function.Parameters[i];
+                    var value = EvaluateExpression(node.Arguments[i]);
+                    Debug.Assert(value != null);
+                    locals.Add(parameter, value);
+                }
+
+                _locals.Push(locals);
+
+                var statement = _functions[node.Function];
+                var result = EvaluateStatement(statement);
+
+                _locals.Pop();
+
+                return result;
+            }
+        }
+
+        private object? EvaluateConversionExpression(BoundConversionExpression node)
+        {
+            var value = EvaluateExpression(node.Expression);
+            if (node.Type == TypeSymbol.Any)
+                return value;
+            else if (node.Type == TypeSymbol.Bool)
+                return Convert.ToBoolean(value);
+            else if (node.Type == TypeSymbol.Int)
+                return Convert.ToInt32(value);
+            else if (node.Type == TypeSymbol.String)
+                return Convert.ToString(value);
+            else
+                throw new Exception($"Unexpected type {node.Type}");
+        }
+
+        private void Assign(VariableSymbol variable, object value)
+        {
+            if (variable.Kind == SymbolKind.GlobalVariable)
+            {
+                _globals[variable] = value;
+            }
+            else
+            {
+                var locals = _locals.Peek();
+                locals[variable] = value;
             }
         }
     }

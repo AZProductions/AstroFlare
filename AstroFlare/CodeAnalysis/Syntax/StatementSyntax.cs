@@ -1,6 +1,10 @@
-namespace AstroFlare.Compiler.CodeAnalysis.Syntax
+namespace AstroFlare.CodeAnalysis.Syntax
 {
     public abstract class StatementSyntax : SyntaxNode
     {
+        private protected StatementSyntax(SyntaxTree syntaxTree)
+            : base(syntaxTree)
+        {
+        }
     }
 }
