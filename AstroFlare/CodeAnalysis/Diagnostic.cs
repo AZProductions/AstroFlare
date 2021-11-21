@@ -9,7 +9,8 @@ namespace AstroFlare.CodeAnalysis
             IsError = isError;
             Location = location;
             Message = message;
-            IsWarning = !IsError;
+            Is
+                ing = !IsError;
         }
 
         public bool IsError { get; }

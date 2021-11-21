@@ -11,12 +11,4 @@
     <PackageReference Include="Cocona" Version="1.6.0" />
     <PackageReference Include="Spectre.Console" Version="0.42.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Compilers.ToolSet" Version="4.0.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
 </Project>

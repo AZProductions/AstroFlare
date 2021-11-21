@@ -11,12 +11,4 @@
     <ProjectReference Include="..\AstroFlare.UI.Colors\AstroFlare.UI.Colors.csproj" />
     <ProjectReference Include="..\AstroFlare.UI\AstroFlare.UI.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Compilers.ToolSet" Version="4.0.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
 </Project>
