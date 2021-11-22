@@ -15,6 +15,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Diagnostics", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Emitter", "AstroFlare.Emitter\AstroFlare.Emitter.csproj", "{87CC9E15-7A69-4E06-A0DA-BCB398DBAFE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Imports.WebGenerator", "AstroFlare.Imports.WebGenerator\AstroFlare.Imports.WebGenerator.csproj", "{2216AC39-ADF0-4224-A020-A27703B04077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Packages.API", "AstroFlare.Packages.API\AstroFlare.Packages.API.csproj", "{99B8E08D-3940-40B4-8325-C1D8FE8F79EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Packages", "AstroFlare.Packages\AstroFlare.Packages.csproj", "{06CC0585-1B67-4C45-8FE2-6D36044F442D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Tests.Imports", "AstroFlare.Tests.Imports\AstroFlare.Tests.Imports.csproj", "{14D03F61-AF98-4C3C-A65F-53E944B7D5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Exeptions", "AstroFlare.Exeptions\AstroFlare.Exeptions.csproj", "{D02B1124-E35C-4F3A-A42A-83E006E108DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroFlare.Tests", "AstroFlare.Tests\AstroFlare.Tests.csproj", "{C1447B9F-2ECC-431C-800C-928D955EC449}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +57,30 @@ Global
 		{87CC9E15-7A69-4E06-A0DA-BCB398DBAFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87CC9E15-7A69-4E06-A0DA-BCB398DBAFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87CC9E15-7A69-4E06-A0DA-BCB398DBAFE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2216AC39-ADF0-4224-A020-A27703B04077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2216AC39-ADF0-4224-A020-A27703B04077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2216AC39-ADF0-4224-A020-A27703B04077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2216AC39-ADF0-4224-A020-A27703B04077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B8E08D-3940-40B4-8325-C1D8FE8F79EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B8E08D-3940-40B4-8325-C1D8FE8F79EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B8E08D-3940-40B4-8325-C1D8FE8F79EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B8E08D-3940-40B4-8325-C1D8FE8F79EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CC0585-1B67-4C45-8FE2-6D36044F442D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CC0585-1B67-4C45-8FE2-6D36044F442D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CC0585-1B67-4C45-8FE2-6D36044F442D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CC0585-1B67-4C45-8FE2-6D36044F442D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D03F61-AF98-4C3C-A65F-53E944B7D5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D03F61-AF98-4C3C-A65F-53E944B7D5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D03F61-AF98-4C3C-A65F-53E944B7D5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D03F61-AF98-4C3C-A65F-53E944B7D5C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02B1124-E35C-4F3A-A42A-83E006E108DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02B1124-E35C-4F3A-A42A-83E006E108DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02B1124-E35C-4F3A-A42A-83E006E108DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02B1124-E35C-4F3A-A42A-83E006E108DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1447B9F-2ECC-431C-800C-928D955EC449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1447B9F-2ECC-431C-800C-928D955EC449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1447B9F-2ECC-431C-800C-928D955EC449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1447B9F-2ECC-431C-800C-928D955EC449}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

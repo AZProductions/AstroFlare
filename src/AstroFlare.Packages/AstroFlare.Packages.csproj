@@ -6,12 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AstroFlare.Tokens\AstroFlare.Tokens.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Exeptions\" />
-  </ItemGroup>
-
 </Project>

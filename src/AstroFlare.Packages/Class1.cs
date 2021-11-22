@@ -1,4 +1,4 @@
-﻿namespace AstroFlare.Imports
+﻿namespace AstroFlare.Packages
 {
     public class Class1
     {
