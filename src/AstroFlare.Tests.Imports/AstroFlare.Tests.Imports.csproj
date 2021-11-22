@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AstroFlare.Imports\AstroFlare.Imports.csproj" />
+    <ProjectReference Include="..\AstroFlare.Packages.API\AstroFlare.Packages.API.csproj" />
+    <ProjectReference Include="..\AstroFlare.Packages\AstroFlare.Packages.csproj" />
+  </ItemGroup>
+
+</Project>

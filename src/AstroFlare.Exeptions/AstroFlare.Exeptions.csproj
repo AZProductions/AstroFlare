@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Lexer\" />
-    <Folder Include="Syntax\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\AstroFlare.Diagnostics\AstroFlare.Diagnostics.csproj" />
-    <ProjectReference Include="..\AstroFlare.Emitter\AstroFlare.Emitter.csproj" />
-    <ProjectReference Include="..\AstroFlare.Expressions\AstroFlare.Expressions.csproj" />
     <ProjectReference Include="..\AstroFlare.Imports\AstroFlare.Imports.csproj" />
     <ProjectReference Include="..\AstroFlare.Tokens\AstroFlare.Tokens.csproj" />
   </ItemGroup>
