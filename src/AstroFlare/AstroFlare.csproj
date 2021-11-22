@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Lexer\" />
+    <Folder Include="Syntax\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AstroFlare.Expressions\AstroFlare.Expressions.csproj" />
+    <ProjectReference Include="..\AstroFlare.Imports\AstroFlare.Imports.csproj" />
+  </ItemGroup>
+
+</Project>

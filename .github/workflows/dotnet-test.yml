@@ -18,4 +18,4 @@ jobs:
     - name: 'dotnet build'
       run: dotnet build
     - name: 'dotnet test'
-      run: dotnet test ./AstroFlare.Tests/AstroFlare.Tests.csproj
+      run: dotnet test

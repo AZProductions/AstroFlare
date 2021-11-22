@@ -1,7 +1,0 @@
-include internal System.(*);
-
-func Main(string<list> args)
-{
-    out.PrintL("Hello World!");
-    return null;
-}

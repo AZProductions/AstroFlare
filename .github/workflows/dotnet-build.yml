@@ -16,8 +16,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ./AstroFlare.Compiler/AstroFlare.Compiler.csproj
+      run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore ./AstroFlare.Compiler/AstroFlare.Compiler.csproj
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./AstroFlare.Compiler/AstroFlare.Compiler.csproj
+      run: dotnet test --no-build --verbosity normal
