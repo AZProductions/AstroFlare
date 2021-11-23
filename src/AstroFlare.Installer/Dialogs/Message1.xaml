@@ -1,0 +1,48 @@
+﻿<hc:Window x:Class="AstroFlare.Installer.Dialogs.Message1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AstroFlare.Installer.Dialogs"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        ShowNonClientArea="True"
+        ShowTitle="False"
+        hc:Theme.Skin="Dark"
+        Topmost="True"
+        ResizeMode="NoResize"
+        ShowActivated="True"
+        xmlns:ip="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        Title="AstroFlare Installer" Height="450" Width="800">
+    <Grid>
+        <Label Content="Welcome" Foreground="White" Background="Transparent" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Poppins SemiBold" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15, 30"></Label>
+        <Label Content="Get started with AstroFlare, install additional packages and more!" Foreground="White" Background="Transparent" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Poppins Regular" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15, 70"></Label>
+        <Grid>
+            <hc:Card HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Width="780" Height="250" Margin="0,0,0,12">
+                <hc:Card.Effect>
+                    <DropShadowEffect BlurRadius="17" Opacity="0.16" Direction="318" ShadowDepth="24"/>
+                </hc:Card.Effect>
+            </hc:Card>
+            <Label Content="Select your installation path." Foreground="White" Background="Transparent" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Poppins Light" FontSize="20" HorizontalAlignment="Left" Margin="28,0,0,0"/>
+            <TextBox x:Name="tb" Margin="28,247,195,140" Text="C:\Program Files\AstroFlare"/>
+            <Button Content="···" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="610,249,0,0" VerticalAlignment="Top" Foreground="White" Height="{Binding ElementName=tb, Path=Height}" Width="{Binding ElementName=tb, Path=Height}" Background="#FF636363"></Button>
+            <Button Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="25" Background="#3265de"></Button>
+        </Grid>
+    </Grid>
+    <hc:Window.NonClientAreaContent>
+        <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal">
+            <Menu Margin="10,0,0,0" Padding="0" IsMainMenu="True">
+                <MenuItem Header="AstroFlare Installer" Icon="{ip:Octicons Kind=Zap}" Margin="-10,0,0,0" IsHitTestVisible="False"></MenuItem>
+                <MenuItem Icon="{ip:Octicons Kind=Code}" Header="Developer settings">
+                    <MenuItem Header="Actions" Icon="{ip:Octicons Kind=IssueOpened}">
+                        <MenuItem Header="Show Current path." Icon="{ip:Octicons Kind=File}"/>
+                        <MenuItem Header="Show Default installer path." Icon="{ip:Octicons Kind=FileBinary}"/>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Icon="{ip:Octicons Kind=IssueClosed}"/>
+                    <MenuItem Header="About" Icon="{ip:Octicons Kind=IssueReopened}"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+    </hc:Window.NonClientAreaContent>
+</hc:Window>
