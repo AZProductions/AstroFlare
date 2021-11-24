@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Flare": {
+      "commandName": "Project",
+      "commandLineArgs": "test"
+    }
+  }
+}

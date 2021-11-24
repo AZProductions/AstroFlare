@@ -2,5 +2,8 @@
 
 namespace AstroFlare.Exeptions
 {
-    
+    public enum ErrorCodeKind 
+    {
+        TEST
+    }
 }
