@@ -4,6 +4,14 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<Company>AZ Software</Company>
+	<Authors>AZ Software</Authors>
+	<Description>Powerful Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler.</Description>
+	<Copyright>©AZ Software 2021</Copyright>
+	<PackageProjectUrl>https://github.com/AZProductions/astroflare</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/AZProductions/astroflare</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>language, programming-language, compiler, dotnet, dotnet-core, ilgenerator, lexer-parser, dotnet6</PackageTags>
   </PropertyGroup>
 
 </Project>
