@@ -12,13 +12,14 @@
         Topmost="True"
         ResizeMode="NoResize"
         ShowActivated="True"
+        WindowStartupLocation="CenterScreen"
         xmlns:ip="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         Title="AstroFlare Installer" Height="450" Width="800">
     <Grid>
         <Label Content="Welcome" Foreground="White" Background="Transparent" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Poppins SemiBold" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15, 30"></Label>
         <Label Content="Get started with AstroFlare, install additional packages and more!" Foreground="White" Background="Transparent" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Poppins Regular" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15, 70"></Label>
-        <Grid>
+        <Grid Background="Transparent">
             <hc:Card HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Width="780" Height="250" Margin="0,0,0,12">
                 <hc:Card.Effect>
                     <DropShadowEffect BlurRadius="17" Opacity="0.16" Direction="318" ShadowDepth="24"/>
@@ -28,6 +29,12 @@
             <TextBox x:Name="tb" Margin="28,247,195,140" Text="C:\Program Files\AstroFlare"/>
             <Button Content="···" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="610,249,0,0" VerticalAlignment="Top" Foreground="White" Height="{Binding ElementName=tb, Path=Height}" Width="{Binding ElementName=tb, Path=Height}" Background="#FF636363"></Button>
             <Button Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="25" Background="#3265de"></Button>
+            <CheckBox HorizontalAlignment="Left" Margin="34,313,0,0" VerticalAlignment="Top" Height="31" Width="216">
+                <Label Content="Use dev releases and packages." FontSize="14" BorderBrush="Transparent" Margin="-11, 0" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left"/>
+            </CheckBox>
+            <CheckBox HorizontalAlignment="Left" IsChecked="True" Margin="34,348,0,0" VerticalAlignment="Top" Height="31" Width="216">
+                <Label Content="Add AstroFlare to path." FontSize="14" BorderBrush="Transparent" Margin="-11, 0" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left"/>
+            </CheckBox>
         </Grid>
     </Grid>
     <hc:Window.NonClientAreaContent>
