@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
     <Company>AZ Software</Company>
     <Authors>AZ Software</Authors>
     <Description>Powerful Object-Oriented programming language. Compile your programs in record time using the AstroFlare Compiler.</Description>
@@ -15,14 +17,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Lexer\" />
-    <Folder Include="Syntax\" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.2" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AstroFlare.Diagnostics\AstroFlare.Diagnostics.csproj" />
     <ProjectReference Include="..\AstroFlare.Emitter\AstroFlare.Emitter.csproj" />
     <ProjectReference Include="..\AstroFlare.Expressions\AstroFlare.Expressions.csproj" />
+    <ProjectReference Include="..\AstroFlare.Generators\AstroFlare.Generators.csproj" OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\AstroFlare.Imports\AstroFlare.Imports.csproj" />
     <ProjectReference Include="..\AstroFlare.Tokens\AstroFlare.Tokens.csproj" />
   </ItemGroup>
