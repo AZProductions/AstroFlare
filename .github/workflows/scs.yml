@@ -13,8 +13,8 @@ jobs:
 
       - name: Build
         run: |
-          dotnet restore ./src/AstroFlare.sln
-          dotnet build ./src/AstroFlare.sln
+          dotnet restore --project ./src/AstroFlare.sln
+          dotnet build --project ./src/AstroFlare.sln
         
       - name: Convert sarif for uploading to GitHub
         uses: security-code-scan/security-code-scan-results-action@v1.3
