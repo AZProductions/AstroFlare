@@ -8,13 +8,22 @@ AstroFlare
 
 [![Release](https://img.shields.io/github/downloads/azproductions/AstroFlare/total)](https://github.com/AZProductions/AstroFlare/releases)
 [![Release(latest)](https://img.shields.io/github/downloads/azproductions/AstroFlare/latest/total)](https://github.com/AZProductions/AstroFlare/releases/latest)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fazsoftware.eu.org/AstroFlare)](https://azsoftware.eu.org/AstroFlare)
-<div id="wcb" class="carbonbadge"></div>
-<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+[![Size](https://img.shields.io/github/repo-size/azproductions/AstroFlare?label=Package%20Size)]()
 <!---![Lines of code](https://img.shields.io/tokei/lines/github/azproductions/AstroFlare)--->
 </div>
 
-<br/> <!--WhiteSpace-->
+<div align="center">
+
+### **CI/CD**:
+
+[![.NET Build (Universal)](https://github.com/AZProductions/AstroFlare/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/AZProductions/AstroFlare/actions/workflows/dotnet-build.yml)
+[![.NET Test (AstroFlare.Tests)](https://github.com/AZProductions/AstroFlare/actions/workflows/dotnet-test.yml/badge.svg?branch=main)](https://github.com/AZProductions/AstroFlare/actions/workflows/dotnet-test.yml)
+
+### **Status**:
+[![Website](https://img.shields.io/website?label=API&up_color=lightgreen&url=https%3A%2F%2Fazsoftware.eu.org/AstroFlare)](https://azsoftware.eu.org/AstroFlare)
+[![Carbon Offset](https://img.shields.io/badge/Carbon%20Footprint-%200.11%20g%20of%20CO2%2Fview-brightgreen)](https://www.websitecarbon.com/website/azsoftware-eu-org-astroflare/)
+</div>
+
 <br/> <!--WhiteSpace-->
 
 # 1. **Intuitive Syntax.**
