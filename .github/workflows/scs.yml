@@ -1,6 +1,7 @@
 on:
   push:
-
+    paths:
+    - 'src/*'
 jobs:
   SCS:
     runs-on: ubuntu-latest
