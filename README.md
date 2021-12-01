@@ -8,7 +8,9 @@ AstroFlare
 
 [![Release](https://img.shields.io/github/downloads/azproductions/AstroFlare/total)](https://github.com/AZProductions/AstroFlare/releases)
 [![Release(latest)](https://img.shields.io/github/downloads/azproductions/AstroFlare/latest/total)](https://github.com/AZProductions/AstroFlare/releases/latest)
-[![License](https://img.shields.io/github/license/azproductions/AstroFlare)](https://github.com/AZProductions/AstroFlare/blob/main/LICENSE)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fazsoftware.eu.org/AstroFlare)](https://azsoftware.eu.org/AstroFlare)
+<div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 <!---![Lines of code](https://img.shields.io/tokei/lines/github/azproductions/AstroFlare)--->
 </div>
 
@@ -31,7 +33,7 @@ AstroFlare uses a direct compiling engine which improves compile speeds by a lot
 
 # 3. **In-house Rendering Engine.**
 
-<img align="left" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header1.png">
+<img align="left" src="https://raw.githubusercontent.com/AZProductions/AstroFlare/main/.design/artwork/header1.png" margin-bottom="10px">
 
 AstroFlare uses native and *In-House* rendering solutions, to display your software with the highest quality possible. As we provide a wider range of product support, we're also planning on releasing different **UI (UserInterface) Kits**, which are following the standards layed out by UI/UX designers. [Learn more about **AstroFlare UI Kits.**]()
 
@@ -54,8 +56,16 @@ ___
 
 - ### [Example/Demo Projects](#quick-start) - Copy/Paste code from the Free Public Domain demos and examples
 
-## Table of Contents
+## 📑 Table of Contents
 - [Example](#toc)
+
+## ❓ FAQ
+
+## 🔨 Compiling AstroFlare
+To start building the project, you need these programs and frameworks:
+- .Net 6
+- .Net CLI
+- *VS Code/2022 (Optional)*
 
 <br/>
 
