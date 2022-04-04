@@ -1,3 +1,10 @@
+<h2 align="center">
+  
+  This repository has been archived.
+  Moved to [Vacaro](https://github.com/vacaro/vacaro).
+  
+</h2>
+
 <h1 align="center">
 <img src="./.design/renders/path2x.png" height="200"/><br />
 AstroFlare
